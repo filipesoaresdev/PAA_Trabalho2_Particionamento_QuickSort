@@ -1,3 +1,4 @@
+package com.filipesoaresdev.quicksort;
 
 public class QuickSortMain {
 
