@@ -2,28 +2,51 @@ package com.filipesoaresdev.quicksort;
 
 public class QuickSortMain {
 
+	public static void calculaTempoExecucaoLomuto(int tamanho, int quantExecucoes){
+		for(int i = 0; i < quantExecucoes; i++) {
+			int[] vetor = GeraLista.gera(tamanho);
+
+			long tempInicial = System.nanoTime();
+			QuickSort.quickSortLomuto(vetor, 0, tamanho - 1);
+			long tempFinal = System.nanoTime();
+			long dif = (tempFinal - tempInicial);
+			System.out.println("Lomuto - Array de tamanho " + tamanho + ": " + dif);
+		}
+	}
+	public static void calculaTempoExecucaoHoare(int tamanho, int quantExecucoes){
+		for(int i = 0; i < quantExecucoes; i++) {
+			int[] vetor = GeraLista.gera(tamanho);
+
+			long tempInicial = System.nanoTime();
+			QuickSort.quickSortHoare(vetor, 0, tamanho - 1);
+			long tempFinal = System.nanoTime();
+			long dif = (tempFinal - tempInicial);
+			System.out.println("Hoare - Array de tamanho " + tamanho + ": " + dif);
+		}
+	}
 	public static void main(String[] args) {
-		int []vetor = {10, 7, 8, 9, 1, 5}; 
-		
-	    int n = vetor.length; 
-	    QuickSort.quickSortLomuto(vetor, 0, n-1); 
-	    System.out.println("Sorted array: "); 
-	    
-	    
-	    for(int i=0; i< vetor.length; i++) {
-	    	System.out.println(vetor[i]); 
-	    }
-	    
-	    int []vetor2 = {10, 7, 8, 9, 1, 5}; 
-		
-	    int n2 = vetor2.length; 
-	    QuickSort.quickSortHoare(vetor2, 0, n2-1); 
-	    System.out.println("Sorted array: "); 
-	    
-	    
-	    for(int i=0; i< vetor2.length; i++) {
-	    	System.out.println(vetor2[i]); 
-	    }
+
+		calculaTempoExecucaoLomuto(100,5);
+		calculaTempoExecucaoLomuto(500,5);
+		calculaTempoExecucaoLomuto(1000,5);
+		calculaTempoExecucaoLomuto(5000,5);
+		calculaTempoExecucaoLomuto(30000,5);
+		calculaTempoExecucaoLomuto(80000,5);
+		calculaTempoExecucaoLomuto(100000,5);
+		calculaTempoExecucaoLomuto(150000,5);
+		calculaTempoExecucaoLomuto(200000,5);
+
+		calculaTempoExecucaoHoare(100,5);
+		calculaTempoExecucaoHoare(500,5);
+		calculaTempoExecucaoHoare(1000,5);
+		calculaTempoExecucaoHoare(5000,5);
+		calculaTempoExecucaoHoare(30000,5);
+		calculaTempoExecucaoHoare(80000,5);
+		calculaTempoExecucaoHoare(100000,5);
+		calculaTempoExecucaoHoare(150000,5);
+		calculaTempoExecucaoHoare(200000,5);
+
+
 	}
 	
 	
