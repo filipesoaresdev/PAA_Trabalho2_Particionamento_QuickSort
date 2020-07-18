@@ -15,7 +15,14 @@ public class GeraLista {
         return arr;
     }
 
+    public static Integer[] geraIntegerType(int tamanho, int pesoVariacaoValores){
 
+        Integer[] arr = new Integer[tamanho];
+        for(int i = 0; i < tamanho; i++){
+            arr[i] = (Integer) gerador.nextInt(tamanho*pesoVariacaoValores);
+        }
+        return arr;
+    }
 
 
 }

@@ -27,6 +27,7 @@ public class QuickSort {
 		int pivo = vetor[direita];
 		int i = (esquerda - 1);
 
+
 		for (int j = esquerda; j <= direita - 1; j++) {
 
 			if (vetor[j] <= pivo) {
@@ -39,16 +40,18 @@ public class QuickSort {
 	}
 
 	static int particaoHoare(int[] vetor, int esquerda, int direita) {
-		int pivo = vetor[esquerda];
+		int pivo = vetor[esquerda + (direita - esquerda)/2];
 		int i = esquerda - 1, j = direita + 1;
 
 		while (true) {
 			do {
 				i++;
+				/*QuickSortMain.pluscount++;*/
 			} while (vetor[i] < pivo);
 
 			do {
 				j--;
+				/*QuickSortMain.pluscount++;*/
 			} while (vetor[j] > pivo);
 
 			if (i >= j)
@@ -65,6 +68,7 @@ public class QuickSort {
 		array[position1] = array[position2];
 
 		array[position2] = temp;
+		/*QuickSortMain.count++;*/
 	}
 
 }
